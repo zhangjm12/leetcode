@@ -1,6 +1,6 @@
 from typing import List
 
-def rub(nums:List[int])->int:
+def rob(nums:List[int])->int:
     n = len(nums)
     r = [0] * n
 
@@ -18,7 +18,7 @@ def rub(nums:List[int])->int:
     return r[n-1]
 
 
-def rub1(nums: List[int]) -> int:
+def rob1(nums: List[int]) -> int:
     n = len(nums)
 
     if n == 1:
@@ -26,10 +26,10 @@ def rub1(nums: List[int]) -> int:
     if n == 2:
         return max(nums[0], nums[1])
 
-    return max(rub_range(nums, 0, n - 2), rub_range(nums, 1, n - 1))
+    return max(rob_range(nums, 0, n - 2), rob_range(nums, 1, n - 1))
 
 
-def rub_range(nums: List[int], start: int, end: int) -> int:
+def rob_range(nums: List[int], start: int, end: int) -> int:
     r = [0] * (end - start + 1)
 
     r[0] = nums[start]
@@ -42,5 +42,5 @@ def rub_range(nums: List[int], start: int, end: int) -> int:
 
 if __name__ == '__main__':
     test = [3, 1, 2, 5, 3, 1, 4, 11]
-    print(rub(test))
-    print(rub1(test))
+    print(rob(test))
+    print(rob1(test))

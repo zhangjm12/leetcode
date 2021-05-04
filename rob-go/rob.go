@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func rub(nums []int) int {
+func rob(nums []int) int {
 	n := len(nums)
 	r := make([]int, n)
 
@@ -24,7 +24,7 @@ func rub(nums []int) int {
 	return r[n-1]
 }
 
-func rub1(nums []int) int {
+func rob1(nums []int) int {
 	n := len(nums)
 
 	if n == 1 {
@@ -59,6 +59,6 @@ func Max(x, y int) int {
 
 func main() {
 	test := []int{3, 1, 2, 5, 3, 1, 4, 11, 5, 5}
-	fmt.Println(rub(test))
-	fmt.Println(rub1(test))
+	fmt.Println(rob(test))
+	fmt.Println(rob1(test))
 }
